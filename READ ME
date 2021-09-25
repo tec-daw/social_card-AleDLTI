@@ -1,0 +1,97 @@
+READ ME
+
+
+
+
+Primer disclaimer la imagen de instagram no se ve, pero no se por que ya que se ve el hover y si funciona el link, si al correrlo a ti te corrio eres mi heroe... por que me la pase la mayoria de la tarde intentando que corriera
+
+Segundo disclaimer, no pude poner comentarios en el codigo por que me marcaba error asi que aqui esta el codigo con comenatrios los puse con // 
+
+
+<head>
+	<meta charset="utf-8">
+	<title>Ale DLTI</title>
+	<link rel="stylesheet" type="text/css" href="style.css"> //ref a la hoja de estilo
+	<link rel="preconnect" href="https://fonts.googleapis.com"> // ref a las fuentes
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:wght@300&display=swap" rel="styleshseet">
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Iconos pero no funciona--> //aqui intente usar iconos de bootstrap pero al final puse imagenes 
+</head>
+<body>
+	//elemento raiz para que React funcione
+	<div id="root"></div> 
+	//importando scripts externos de React
+	<script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+	<script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+	// empezando script de Babel
+	<script type="text/babel">
+	//variable con ref root del body del archivo HTML 
+	const rootElement = document.getElementById('root');
+	// declarando el componente de React como clase Card 
+	class Card extends React.Component {
+
+		render() {
+				return ( //esta es la parte de React donde se devuelve un solo parametro
+					<React.Fragment>
+						<div className="card"> // aqui se inica el div de la tarjeta y en el css esta todo para que se vea bonito 
+					    	<div className="cont">
+						      	<img src={this.props.imagen} alt="Foto persona" id="mi-foto"></img> //recibe la referencia a mi foto de perfil que está declarado más abajo en la llamada de render 
+						      	
+						      	<div className="texto"> 
+						      		
+						      		<h2 className="nombre">{this.props.name}</h2> // recibe la referencia del nombre que se declara abajo 
+						      		
+						      		<h5 className="info">{this.props.study}</h5>// recibe la referencia del los dattos de estudiante que se declara abajo 
+						      								      		
+						      		<h5 className="info">{this.props.mail}</h5> // recibe la referencia del correo electronico que se declara abajo 
+						   						      			
+						      			<div className="cont-social"> 
+					     					
+					     					<div className="cont_logo">
+					     						<a href="https://www.linkedin.com/in/ale-dlti-08364b14a/" >
+													<img className="icono" src={this.props.link}></img>
+												</a>	//recibe la referencia a la imagen de linkedin que está declarado más abajo en la llamada de render 				     											     						
+										      	<h6 className="info">Linkedin</h6>					      
+										    </div>
+										    
+										    <div className="cont_logo">
+										    	<a href="https://www.instagram.com/ale_dlti/" >
+													<img className="icono" src={this.props.insta}></img>
+												</a>//recibe la referencia a la imagen de intagram que está declarado más abajo en la llamada de render 
+										     	<h6 className="info">Instagram</h6>										    
+										    </div>
+										    
+										    <div className="cont_logo">
+										    	<a href="https://github.com/AleDLTI" >
+													<img className="icono" src={this.props.gh}></img>
+												</a>//recibe la referencia a la imagen de github que está declarado más abajo en la llamada de render 										    	
+										     	<h6 className="info">  GitHub</h6>					     
+										    </div>
+										    
+										     <div className="cont_logo">
+										     	<a href="https://vm.tiktok.com/ZMRsPuav7/" >
+													<img className="icono" src={this.props.tt}></img>
+												</a>	//recibe la referencia a la imagen de tiktok, está declarado más abajo en la llamada de render 									    	
+										     	<h6 className="info">  Tik Tok</h6>   
+					    					</div>
+
+						      			</div>	  
+						 		</div>
+						 	</div>
+					    </div>
+					</React.Fragment>
+				
+			);
+		}
+	}
+	// se llama a render para generar en la página lo declarado arriba
+	ReactDOM.render(
+			<Card imagen="ale.png"name="Alejandra de la Torre Ibarra" study="Estudiante de 8vo semestre de ITIt"  mail="Correo: A01273860@itesm.mx"  link="linkedin.png" inta="insta.png" gh="github.png" tt="tik-tok.png" />,
+			rootElement
+		)
+	   
+	</script>
+</body> //las referencias por que son importantes 
+<!-- <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div> --> 
+</html>
