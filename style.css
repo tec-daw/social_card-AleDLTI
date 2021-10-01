@@ -11,6 +11,14 @@ body {
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+button{
+  background: #4CA6A6;
+  font-family: 'Roboto', sans-serif;
+  color: #DBEDED;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
 .main-container {
   padding: 30px;
 }
