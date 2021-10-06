@@ -1,0 +1,92 @@
+<head>
+	<meta charset="utf-8">
+	<title>Ale DLTI</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:wght@300&display=swap" rel="styleshseet">
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Iconos pero no funciona-->
+</head>
+<body>
+	<div id="root"></div>
+	<script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+	<script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+	<!-- Empezando script de Babel -->
+	<script type="text/babel">
+
+	const rootElement = document.getElementById('root');
+
+	function Card(props) {
+			const [imagen, setimagen] = React.useState(props.imagen);
+			const [name, setName] = React.useState(props.name);
+			const [study, setdtudy] = React.useState(props.study);
+			const [mail, setmail] = React.useState(props.mail);
+			const [link, setlink] = React.useState(props.link);
+			const [gh, setgh] = React.useState(props.gh);
+			const [tt, settt] = React.useState(props.tt);
+			const [boton, setboton] = React.useState(props.boton);
+
+				return (
+				
+					<React.Fragment>
+						<div className="card">
+					    	<div className="cont">
+						      	<img src={imagen} alt="Foto persona" id="mi-foto"></img>
+						      	
+						      	<div className="texto"> 
+						      		
+						      		<h2 className="nombre">{name}</h2>
+						      		
+						      		<h5 className="info">{study}</h5>
+						      		
+						      		<h5 className="info">{mail}</h5>
+						      			
+						      			<div className="cont-social"> 
+					     					
+					     					<div className="cont_logo">
+					     						<a href="https://www.linkedin.com/in/ale-dlti-08364b14a/" >
+													<img className="icono" src={link}></img>
+												</a>					     											     						
+										      	<h6 className="info">Linkedin</h6>					      
+										    </div>
+										    
+										    								    
+										    <div className="cont_logo">
+										    	<a href="https://github.com/AleDLTI" >
+													<img className="icono" src={gh}></img>
+												</a>										    	
+										     	<h6 className="info">  GitHub</h6>					     
+										    </div>
+										    
+										     <div className="cont_logo">
+										     	<a href="https://vm.tiktok.com/ZMRsPuav7/" >
+													<img className="icono" src={props.tt}></img>
+												</a>										    	
+										     	<h6 className="info">  Tik Tok</h6>   
+					    					</div>
+
+					    					<div className="cont_logo">
+										    	<button onClick={() => setimagen("cat.jpeg")}>CLIC ME</button>
+												
+										     	<h6 className="info" >Randome</h6>										    
+										    </div>
+
+						      			</div>	  
+						 		</div>
+						 	</div>
+					    </div>
+					</React.Fragment>
+				
+			);
+		}
+	
+	ReactDOM.render(
+			<Card imagen="ale.png"name="Alejandra de la Torre Ibarra" study="Estudiante de 8vo semestre de ITIt"  mail="Correo: A01273860@itesm.mx"  link="linkedin.png" boton="random.png" gh="github.png" tt="tik-tok.png" />,
+			rootElement
+		)
+	   
+	</script>
+</body>
+<!-- <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div> --> 
+</html>
